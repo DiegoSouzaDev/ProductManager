@@ -1,7 +1,5 @@
 package com.easy.cadastro.spaCadastro.entity;
 
-import antlr.ParserSharedInputState;
-
 import javax.persistence.*;
 import java.util.List;
 
@@ -11,22 +9,19 @@ import java.util.List;
 
 
 @Entity
-public class Estado {
-
+public class State {
+    @Id
     @GeneratedValue
-    @Column
-    private Long Id;
+    private Long id;
 
-    @Column
     private String nome;
 
-    @Column
     private String abrev;
 
-    @OneToMany
-    private List<Cidade> cidade;
+    @OneToMany(mappedBy = "state")
+    private List<City> city;
 
-    @Column
-    @ManyToOne
-    private Pais pais;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Country country;
 }

@@ -1,8 +1,6 @@
 package com.easy.cadastro.spaCadastro.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
+import javax.persistence.*;
 
 /**
  * Created by Diego de Souza on 15/08/18.
@@ -10,16 +8,15 @@ import javax.persistence.GeneratedValue;
 
 @Entity
 public class ProductType {
-
+    @Id
     @GeneratedValue
-    @Column
     private Long id;
 
-    @Column
     private String name;
 
-    @Column
     private String description;
 
+    @OneToOne
+    private Product product;
 
 }
