@@ -3,10 +3,7 @@ package com.easy.cadastro.spaCadastro.entity;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.sql.Blob;
 import java.util.Date;
 
@@ -19,41 +16,32 @@ import java.util.Date;
 @Setter
 public class Product {
 
+    @Id
     @GeneratedValue
-    @Column
     private Long id;
 
-    @Column
+    @ManyToOne
     private Supplier supplier;
 
-    @Column
+    @OneToOne(mappedBy = "product")
     private ProductType productType;
 
-    @Column
     private String referenceCode;
 
-    @Column
     private String description;
 
-    @Column
     private Double coastPrice;
 
-    @Column
     private Double icmsst;
 
-    @Column
     private Double ipi;
 
-    @Column
     private Double ncm;
 
-    @Column
     private Date lastUpdate;
 
-    @Column
     private String  observation;
 
-    @Column
     private Blob photo;
 
 
