@@ -23,7 +23,7 @@ public class Supplier {
 
     private String inscricaoEstadual;
 
-    @OneToOne(mappedBy = "supplier")
+    @OneToOne(mappedBy = "supplier", cascade = CascadeType.ALL)
     private Address address;
 
     private String fone;
