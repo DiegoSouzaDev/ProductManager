@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Main Page</title>
+<script src="js/lib/angular.min.js"></script>
+<script src="js/lib/ui-bootstrap-tpls-2.5.0.min.js"></script>
+<script src="js/app/app.js"></script>
+<script src="js/app/CountryController.js"></script>
+<script src="js/app/CountryService.js"></script>
+<link rel="stylesheet" href="css/lib/bootstrap.min.css" />
+<link rel="stylesheet" href="css/app/app.css" />
+</head>
+<body ng-app="app">
+	<hr />
+	<div class="container" ng-controller="CountryController">
+		<div class="row">
+			<label>Pais</label> <input type="text" ng-model="country.name"
+				class="input-sm spacing" /> <label>Abreviado</label> <input
+				type="text" ng-model="country.abrev" class="input-sm spacing" />
+			<button ng-click="saveCountry()" class="btn btn-sm btn-info">Salvar
+				Pais</button>
+		</div>
+		<hr />
+		<div class="row">
+			<p>{{allCountries | json}}</p>
+		</div>
+		<hr />
+		<div class="row" ng-repeat="country in allCountries">
+			<div class="">
+				<h3>{{country.name}}</h3>
+				<h3>{{country.abrev}}</h3>
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,9 +1,12 @@
 package com.easy.cadastro.spaCadastro.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
 import lombok.Getter;
 import lombok.Setter;
-
-import javax.persistence.*;
 
 /**
  * Created by Diego de Souza on 06/08/18.
@@ -12,25 +15,22 @@ import javax.persistence.*;
 @Getter
 @Setter
 public class Address {
-    @Id
-    @GeneratedValue
-    private Long id;
+	@Id
+	@GeneratedValue
+	private Long id;
 
-    private String street;
+	private String street;
 
-    private String number;
+	private String number;
 
-    private String neighbourhood;
+	private String neighbourhood;
 
-    @OneToOne
-    private Supplier supplier;
+	@OneToOne
+	private City city;
 
-    @OneToOne
-    private City city;
+	@OneToOne
+	private State state;
 
-    @OneToOne
-    private State state;
-
-    @OneToOne
-    private Country country;
+	@OneToOne
+	private Country country;
 }
