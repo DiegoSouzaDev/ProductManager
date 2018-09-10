@@ -22,13 +22,10 @@
 		
 	<hr/>
 	
-		<!-- div class="row">
-			<p>{{allCountries | json}}</p>
-		</div -->
-		<hr />
-		<div ng-repeat="country in allCountries" class="row" >		
-				{{country.name}}
-				{{country.abrev}}
+	
+		
+		<div ng-repeat="country in allCountries" class="row" >			
+				<h3>País: {{country.name}} - {{country.abrev}}</h3>
 		</div>
 	</div>
 </body>

@@ -20,7 +20,7 @@ module.controller("CountryController", [ "$scope", "CountryService",
 			// });
 
 			$scope.loadCountries =  CountryService.getAllCountries().then(function(value) {
-					$scope.allCountries = value.data;
+					$scope.allCountries = value.data._embedded.country;
 				}, function(reason) {
 					console.log("error occured");
 				}, function(value) {
